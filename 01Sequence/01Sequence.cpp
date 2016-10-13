@@ -143,7 +143,8 @@ void ProcessSequences(char *input)
 	cout<<endl;
 
 	cout<<"Output: "<<endl;
-	cout<<sum<<" mod " << "1000000007 = " << sum%1000000007 <<endl;
+	int out = sum%1000000007;
+	cout<<sum<<" mod " << "1000000007 = " << out <<endl;
 
 
 }
