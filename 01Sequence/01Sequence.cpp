@@ -31,7 +31,13 @@ void ProcessSequences(char *input)
 	 * -> 00, 01, 10, 11
 	 */
 	int seqLength = pow(2,c);
-	int sequencelist[seqLength][100];
+	//Initialize Array
+	int **sequencelist;
+    sequencelist = new int*[seqLength];
+    for(int i=0; i<seqLength; i++){
+        sequencelist[i] = new int[500000];
+    }//end initialize array
+
 	for(int count = 0; count < seqLength; count++)
 	{
 		int n = 0;
@@ -49,7 +55,13 @@ void ProcessSequences(char *input)
 	 * ?? -> 00, 01, 10, 11
 	 * -> 1000, 1010, 1100, 1110
 	 */
-	int allSequences[seqLength][100];
+	//Initialize array 
+	int **allSequences;
+    allSequences = new int*[seqLength];
+    for(int i=0; i<seqLength; i++){
+        allSequences[i] = new int[500000];
+    }//end initialize array
+
 	for(int d = 0; d<seqLength; d++)
 	{
 		int seqCount = 0;
