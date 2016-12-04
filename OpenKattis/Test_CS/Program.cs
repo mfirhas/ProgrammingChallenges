@@ -151,8 +151,44 @@ namespace ConsoleApplication
            return ReturnList;
        }
 
+		 public static bool CheckIfSumIsX(int n, int x)
+		 {
+			 string s = n.ToString();
+			 int sum = 0;
+			 for(int i=0;i<s.Length;i++){
+				 sum += (int)s[i];
+			 }
+
+			 if(sum == x){
+				 return true;
+			 }else{
+				 return false;
+			 }
+		 }
+
+		 public static bool CheckIfSumIsX2(int n, int x){
+			 int sum = 0;
+			 while (n != 0) {
+    			sum += n % 10;
+    			n /= 10;
+			 }
+
+			 if(sum == x){
+				 return true;
+			 }else{
+				 return false;
+			 }
+		 }
+
       public static void Main(string[] args)
       {
+			int n = 314;
+			int x = 8;
+			if(CheckIfSumIsX2(n,x)==true){
+				Console.WriteLine("Right!");
+			}else{
+				Console.WriteLine("Wrong!");
+			}
       //   List<string> input = new List<string>();
       //   input.Add("at");
       //   input.Add("asd");
@@ -165,7 +201,6 @@ namespace ConsoleApplication
       //     //   Console.WriteLine(str);
       //     // }
       //   }
-         Console.WriteLine("fathir".Substring(5,1));
 
 
         // var values2 = new[] { 'a', 'b', 'c', 'd', 'e', 'v', 'h', 'j', 'p' };
