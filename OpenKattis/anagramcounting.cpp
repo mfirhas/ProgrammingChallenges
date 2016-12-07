@@ -31,10 +31,6 @@ int main(){
 	while(!cin.eof()){
 		cin>>i;
 		input.push_back(i);
-		
-		// if(cin.eof()){
-			// PrintResult(input);
-		// }
 	}
 	
 	PrintResult(input);

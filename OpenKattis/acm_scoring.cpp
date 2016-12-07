@@ -25,5 +25,5 @@ int main(){
 	for(int i=0;i<sizeof(time)/sizeof(*time);i++){
 		cout << time[i] << endl;
 	}
-	return 0;	
+	return 0;
 }
