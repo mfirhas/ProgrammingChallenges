@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+// Author: Muhammad Fathir Irhas - 12/07/2016
+
 namespace ladder
 {
     public class Program
