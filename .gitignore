@@ -16,3 +16,4 @@ ProjectEuler/*.out
 *.exe
 *.out
 *.java
+test.js
