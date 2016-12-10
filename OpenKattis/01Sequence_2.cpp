@@ -7,12 +7,10 @@
 
 using namespace std;
 
-
-
 void ProcessSequences(char *input)
 {
 	int c = 0;
-	
+
 	/* Count the number of '?' in input sequence
 	 * 1??0 -> 2
 	 */
@@ -21,13 +19,13 @@ void ProcessSequences(char *input)
 		if(*(input+i) == '?')
 		{
 			c++;
-		}		
+		}
 	}
 
 
 	/* Get all possible combination of '?'
 	 * 1??0
-	 * -> ?? 
+	 * -> ??
 	 * -> 00, 01, 10, 11
 	 */
 	int seqLength = pow(2,c);
@@ -51,10 +49,10 @@ void ProcessSequences(char *input)
 	  		n++;
 	   	}
 	   	// cout << std::endl;
-	}	
+	}
 
 	/* Change '?' in former sequence into all possible bits
-	 * 1??0 
+	 * 1??0
 	 * ?? -> 00, 01, 10, 11
 	 * -> 1000, 1010, 1100, 1110
 	 */
@@ -80,9 +78,9 @@ void ProcessSequences(char *input)
 	}
 
 
-	/* 
+	/*
 	 *	Sort each sequences to increasing mode
-	 * 
+	 *
 	 */
 	// cout<<endl;
 	int totalNum[seqLength];
@@ -102,11 +100,11 @@ void ProcessSequences(char *input)
 		}//endfor
 		totalNum[i] = num;
 	}//endfor
-	
-	
-	
-	
-	
+
+
+
+
+
 	/*
 	 * Sum of all Num of Inversions
 	 */
@@ -114,7 +112,7 @@ void ProcessSequences(char *input)
 	for(int i=0;i<seqLength;i++){
 		sum = sum + totalNum[i];
 	}
-	
+
 
 	// cout<<"Output: "<<endl;
 	int out = sum%1000000007;
