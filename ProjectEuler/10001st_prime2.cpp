@@ -30,6 +30,6 @@ int main(){
     }
   }
 
-  printf("%dn",ans);
+  printf("%d",ans);
   return 0;
 }
