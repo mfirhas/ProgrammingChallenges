@@ -17,3 +17,4 @@ ProjectEuler/*.out
 *.out
 *.java
 test.js
+test.*
