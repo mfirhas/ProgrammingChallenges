@@ -20,17 +20,16 @@ bool isPrime(long long x){
     return true;
 }
 
-int LargestPrimeFactor(long long* n){
-    int val = 0;
-    if(isPrime(*n)){
-        return *n;
+long long LargestPrimeFactor(long long n){
+    long long val = 0;
+    if(isPrime(n)){
+        return n;
     }else{
-        int i = 2;
-        int temp = *n;
+        long long i = 2;
+        long long temp = n;
         while(true){
             if(temp % i == 0 && isPrime(i)){
                 temp /= i;
-                cout << temp << endl;
                 if(isPrime(temp)){
                     val = temp;
                     return val;
@@ -44,17 +43,13 @@ int LargestPrimeFactor(long long* n){
 }
 
 int main(){
-    // long long t,n;
-    // cin >> t;
-    // for(int i=0;i<t;i++){
-    //     cin >> n;
-    //     cout << LargestPrimeFactor(&n) << endl;
-    // }
-
-    int n;
-    cin >> n;
-    n = n / 2;
-    cout << n << endl;
+    long long t,n;
+    cin >> t;
+    for(long long i=0;i<t;i++){
+        cin >> n;
+        long long largest = LargestPrimeFactor(n);
+        cout << largest << endl;
+    }
 
     return 0;
 }
