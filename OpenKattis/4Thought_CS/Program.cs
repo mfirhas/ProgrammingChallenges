@@ -5,11 +5,6 @@ using System.Threading.Tasks;
 
 namespace _Thought_CS
 {
-    public class Equations{
-        public int result{get; set;}
-        public string equation{get; set;}
-    }
-
     public static class Implementations{
 
         //Calculate the value
@@ -18,7 +13,7 @@ namespace _Thought_CS
         }
 
         //Get list of all answers
-        public List<Equations> AllList(){
+        public Dictionary<int,string> AllList(){
 
         }
 
