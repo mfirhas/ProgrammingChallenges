@@ -18,7 +18,7 @@ namespace GrassSeed_CS
                 string[] input = Console.ReadLine().Split();
                 total_cost += cost * double.Parse(input[0]) * double.Parse(input[1]);
             }
-            Console.WriteLine(total_cost.ToString("F6"));
+            Console.WriteLine(total_cost.ToString("F6")); //Set precision to 10^-6
         }
     }
 }
