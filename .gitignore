@@ -2,13 +2,11 @@ test.cpp
 OpenKattis/test.java
 OpenKattis/*/bin
 OpenKattis/*/obj
-OpenKattis/*/*.json
 OpenKattis/*/*.lock.json
 OpenKattis/*.exe
 OpenKattis/*.out
 ProjectEuler/*/bin
 ProjectEuler/*/obj
-ProjectEuler/*/*.json
 ProjectEuler/*/*.lock.json
 ProjectEuler/*.exe
 ProjectEuler/*.out
