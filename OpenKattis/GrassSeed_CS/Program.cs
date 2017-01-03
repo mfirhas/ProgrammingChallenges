@@ -11,7 +11,7 @@ namespace GrassSeed_CS
     {
         public static void Main(string[] args)
         {
-            double cost = int.Parse(Console.ReadLine());
+            double cost = double.Parse(Console.ReadLine());
             int num = int.Parse(Console.ReadLine());
             double total_cost = 0;
             for(int i=0;i<num;i++){
