@@ -1,16 +1,39 @@
-import sys
-import itertools
+long Mod(long x)
+{
+    return x % 1000000007;
+}
 
-def RemoveDuplicate(s):
-	uniqs = '';
-	for x in s:
-		if not(x in uniqs):
-			uniqs = uniqs + x;
-			
-	return uniqs;
-	
-print(RemoveDuplicate('HAPPYBIRTHDAYCACEY'));
+long Calc(string s)
+{
+    int len = s.Length;
+    long[,] nums = new long[len + 1, len + 1];
+    long sum = 0;
+    nums[0, 0] = 1;
 
-# print(''.join(set('aaabcabccd')))
+    for (int i = 0; i < len; ++i)
+    {
+        if(s[i] == '?')
+        {
+            sum = Mod(sum * 2);
+        }
+        for (int j = 0; j <= i; ++j)
+        {
+            if (s[i] == '0' || s[i] == '?')
+            {
+                nums[i + 1, j] = Mod(nums[i + 1, j] + nums[i, j]);
+                sum = Mod(sum + j * nums[i, j]);
+            }
 
-# print(''.join(ch for ch, _ in itertools.groupby('HAPPYBIRTHDAYCACEY')));
+            if (s[i] == '1' || s[i] == '?')
+            {
+                nums[i + 1, j + 1] = nums[i, j];
+            }
+        }
+    }
+
+    return sum;
+}
+
+if __name__ == "__main__":
+	x = raw_input();
+	print Calc(x);
