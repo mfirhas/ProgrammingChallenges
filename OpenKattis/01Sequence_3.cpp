@@ -7,7 +7,7 @@
 
 using namespace std;
 
-
+//Author: Muhammad Fathir Irhas - OpenKattis - 01Sequence
 
 void ProcessSequences(char *input)
 {
