@@ -2,21 +2,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Numerics;
 
-namespace Test_CS
+namespace _1Sequence_CS
 {
     public class Program
     {
-        long Mod(long x)
+        BigInteger Mod(BigInteger x)
         {
             return x % 1000000007;
         }
 
-        long DoSomething(string s)
+        BigInteger DoSomething(string s)
         {
             int len = s.Length;
-            long[,] nums = new long[len + 1, len + 1];
-            long sum = 0;
+            BigInteger[,] nums = new BigInteger[len + 1, len + 1];
+            BigInteger sum = 0;
             nums[0, 0] = 1;
 
             for (int i = 0; i < len; ++i)
@@ -47,7 +48,7 @@ namespace Test_CS
         {
             Program p = new Program();
             string input = Console.ReadLine();
-            long r = p.DoSomething(input);
+            BigInteger r = p.DoSomething(input);
             Console.WriteLine(r);
         }
     }
