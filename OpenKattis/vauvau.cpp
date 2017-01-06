@@ -2,40 +2,32 @@
 
 using namespace std;
 
+string CountDogs(int t, int a, int b, int c, int d){
+    int dog = 0;
+    if((t%(a+b)<=a) && (t%(a+b)!=0)){
+        dog++;
+    }
+    if((t%(c+d)<=c) && (t%(c+d)!=0)){
+        dog++;
+    }
+    if(dog == 0){
+        return "none\n";
+    }else if(dog==1){
+        return "one\n";
+    }else if(dog==2){
+        return "both\n";
+    }else{
+        return " ";
+    }
+}
+
 int main(){
     int a,b,c,d;
     cin >> a >> b >> c >> d;
     int p,m,g;
     cin >> p >> m >> g;
-    if((a-p>-1) && (c-p>-1)){
-        cout << "both" << endl;
-    }else if((a-p>-1) && (c-p<0)){
-        cout << "one" << endl;
-    }else if((a-p<0) && (c-p>-1)){
-        cout << "one" << endl;
-    }else if((a-p<0) && (c-p<0)){
-        cout << "none" << endl;
-    }
-
-    if((a-m>-1) && (c-m>-1)){
-        cout << "both" << endl;
-    }else if((a-m>-1) && (c-m<0)){
-        cout << "one" << endl;
-    }else if((a-m<0) && (c-m>-1)){
-        cout << "one" << endl;
-    }else if((a-m<0) && (c-m<0)){
-        cout << "none" << endl;
-    }
-
-    if((a-g>-1) && (c-g>-1)){
-        cout << "both" << endl;
-    }else if((a-g>-1) && (c-g<0)){
-        cout << "one" << endl;
-    }else if((a-g<0) && (c-g>-1)){
-        cout << "one" << endl;
-    }else if((a-g<0) && (c-g<0)){
-        cout << "none" << endl;
-    }
-
+    cout << CountDogs(p,a,b,c,d);
+    cout << CountDogs(m,a,b,c,d);
+    cout << CountDogs(g,a,b,c,d);
     return 0;
 }
