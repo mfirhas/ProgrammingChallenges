@@ -1,15 +1,16 @@
-import sys;
+# Author: Muhammad Fathir Irhas - SimonSays OpenKattis
+
 
 def SimonSays(s):
-	if("Simon says " in s):
-		print s[11:];
+	if(s[0:10] == "simon says"):
+		return s[11:]
+	else:
+		return ""
 
 if __name__ == "__main__":
-	input_s = [];
-	num = input(); 
+	num = input()
 	for i in range(0,num):
-		s = raw_input();
-		input_s.append(s);
+		s = raw_input()
+		print SimonSays(s)
 
-	for j in range(0,len(input_s)):
-		SimonSays(input_s[j]);
+
