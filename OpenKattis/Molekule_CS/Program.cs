@@ -71,8 +71,8 @@ namespace Molekule
 
 			  int[] conct = GetConcantenate(a,b);
 			  int most = GetMostOccuring(conct);
-			  Console.WriteLine(most);
-			  Console.WriteLine("-------------");
+			//   Console.WriteLine(most);
+			//   Console.WriteLine("-------------");
 
 			  List<int> result = Kurwa(a,b,most);
 			  for(int i=0;i<result.Count - 1;i++){
