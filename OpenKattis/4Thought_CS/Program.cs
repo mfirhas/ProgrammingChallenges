@@ -5,34 +5,18 @@ using System.Threading.Tasks;
 
 namespace _Thought_CS
 {
-    public static class Implementations{
-
-        //Calculate the value
-        public int Calculate(int a, int b, ){
-
-        }
-
-        //Get list of all answers
-        public Dictionary<int,string> AllList(){
-
-        }
-
-    }
-
     public class Program
     {
+        public Dictionary<string,int> GetAllList(){
+            Dictionary<int, string> list = new Dictionary<int, string>();
+            int[] opt = new int[]{1,2,3,4};
+
+        }        
         public static void Main(string[] args)
         {
-            int num = int.Parse(Console.ReadLine());
-            List<int> input = new List<int>();
-            List<Equations> all_Result = Implementations.AllList();
-
-            while(num--){
-                int n = int.Parse(Console.ReadLine());
-                if(all_Result.Find(x => x.result == n) != null){
-                    Console.WriteLine()
-                }
-            }
+            
         }
     }
+
+
 }
