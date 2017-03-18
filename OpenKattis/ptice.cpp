@@ -5,26 +5,24 @@
 using namespace std;
 
 void foo(int num, string input){
-	string adrian = "ABCABCABCABC";
-	string bruno  = "BABCBABCBABC";
-	string goran  = "CCAABBCCAABB";
-	int a = 0;
-	int b = 0;
-    int g = 0;
-	
-	for(int i=0;i<num;i++){
-		if(input[i] == adrian[i]){ a++;}
-		if(input[i] == bruno[i]){ b++;}
-		if(input[i] == goran[i]){ g++;}
+	string names = {"Adrian", "Bruno", "Goran"};
+	char answers[][] = {{'A','B','C'}, {'B', 'A', 'B', 'C'}, {'C', 'C', 'A', 'A', 'B', 'B'}};
+	int scores[3] = {0,0,0};
+
+	for(int i=0;i<input.length();i++){
+		for(int j=0;j<3;j++){
+			if(input[i] == answers[j][i % (sizeof(answers[j])/sizeof(answers[j][0]))]){
+				scores[j] += 1;
+			}
+		}
 	}
 
-	int maks = std::max(std::max(a,b),g);
-	
-	if(maks>0){
-		cout << maks << endl;
-		a==maks ? cout << "Adrian" << endl : cout<<"";
-		b==maks ? cout << "Bruno" << endl : cout<<"";
-		g==maks ? cout << "Goran" << endl : cout<<"";
+	int highest_score = *std::max_element(scores);
+	cout << highest_score << endl;
+	for(int i=0;i<3;i++){
+		if(scores[i] == highest_score){
+			cout << names[i] << endl;
+		}
 	}
 }
 
