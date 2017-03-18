@@ -16,7 +16,7 @@ void foo(int num, string input){
 
 	for(int i=0;i<input.length();i++){
 		for(int j=0;j<3;j++){
-			if(input[i] == answers[j][i % answers[j].size()){
+			if(input[i] == answers[j][i % answers[j].size()]){
 				scores[j] += 1;
 			}
 		}
@@ -28,11 +28,6 @@ void foo(int num, string input){
 	(scores[0] == highest_score) ? cout<<"Adrian"<< endl : cout<<"";
 	(scores[1] == highest_score) ? cout<<"Bruno"<< endl : cout<<"";
 	(scores[2] == highest_score) ? cout<<"Goran"<< endl : cout<<"";
-
-	cout << "Array length " << sizeof(answers[0])/sizeof(answers[0][0]);
-	cout << scores[0] << endl;
-	cout << scores[1] << endl;
-	cout << scores[2] << endl;
 	// for(int i=0;i<3;i++){
 	// 	if(scores[i] == highest_score){
 	// 		cout << names[i] << "\n";
