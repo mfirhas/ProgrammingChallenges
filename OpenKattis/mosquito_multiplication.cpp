@@ -26,7 +26,9 @@ int SurvivedMosquitos(int M , int P, int L, int E, int R, int S, int N){
 
 int main(){
     int M , P, L, E, R, S, N;
-    cin >> M >> P >> L >> E >> R >> S >> N;
-    cout << SurvivedMosquitos(M , P, L, E, R, S, N) << endl;
+    // Inputs need several instances
+    while(cin >> M >> P >> L >> E >> R >> S >> N){
+       cout << SurvivedMosquitos(M , P, L, E, R, S, N) << endl; 
+    }
     return 0;
 }
