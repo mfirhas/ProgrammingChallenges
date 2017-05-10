@@ -2,5 +2,13 @@
     "python.linting.pylintEnabled": false,
     "files.associations": {
         "ostream": "cpp"
+    },
+
+    "workbench.colorCustomizations": {
+        "sideBar.background": "#1C1F24",
+        "sideBarTitle.foreground": "#fff",
+        "sideBarSectionHeader.background": "#2E2F31",
+        "editor.findMatchHighlightBackground": "#fff",
+        "editorHoverWidget.background": "#fff"
     }
 }
