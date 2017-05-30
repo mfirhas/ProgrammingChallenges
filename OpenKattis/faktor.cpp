@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void Foo(int a, int i){
+int Foo(int a, int i){
     
     double _a = (double)a;
     double _i = (double)i;
@@ -11,10 +11,12 @@ void Foo(int a, int i){
     double __i = s / _a;
     while(ceil(__i) == _i){
         s = s - 1;
-        
+        __i = s / _a;
+        if(ceil(__i) < _i){
+            return (int)s + 1;
+        }
     }
-
-    
+    return 0;
 }
 
 int main(){
