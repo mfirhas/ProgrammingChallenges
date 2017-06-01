@@ -1,5 +1,6 @@
 {
     "python.linting.pylintEnabled": false,
+    "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
         "ostream": "cpp"
     },
