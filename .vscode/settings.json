@@ -1,6 +1,7 @@
 {
     "python.linting.pylintEnabled": false,
     "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
     "files.associations": {
         "ostream": "cpp"
     },
