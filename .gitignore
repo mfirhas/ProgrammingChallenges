@@ -11,6 +11,7 @@ ProjectEuler/*/obj
 ProjectEuler/*/*.lock.json
 ProjectEuler/*.exe
 ProjectEuler/*.out
+TEST/
 *.class
 *.exe
 *.out
