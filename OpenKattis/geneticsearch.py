@@ -21,7 +21,12 @@ class GeneticSearch:
 
     def CountType2(self):
         type2 = 0
-        
+
+
+def remove_char(str, n):
+    first_part = str[:n] 
+    last_pasrt = str[n+1:]
+    return first_part + last_pasrt
 
 
 if __name__ == '__main__':
