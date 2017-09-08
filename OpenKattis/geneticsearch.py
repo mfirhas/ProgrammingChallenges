@@ -1,5 +1,3 @@
-
-
 class GeneticSearch:
 
     global type1
@@ -12,21 +10,55 @@ class GeneticSearch:
 
     def CountType1(self):
         type1 = 0
-        for i in range((len(L)-len(S))+1):
-            temp = L[i:i+len(S)]
-            if(S == temp):
+        for i in range((len(self.L)-len(self.S))+1):
+            temp = self.L[i:i+len(self.S)]
+            if(self.S == temp):
                 type1 += 1
         
         return type1
 
     def CountType2(self):
         type2 = 0
+        l = self.unique_removed_strings(self.S)
+        for i in range(len(l)):
+            for j in range((len(self.L)-len(l[i]))+1):
+                temp = self.L[j:j+len(l[i])]
+                if(l[i] == temp):
+                    type2 +=1
 
+        return type2
 
-def remove_char(str, n):
-    first_part = str[:n] 
-    last_pasrt = str[n+1:]
-    return first_part + last_pasrt
+    def CountType3(self):
+        type3 = 0
+        l = self.unique_added_strings(self.S)
+        for i in range(len(l)):
+            for j in range((len(self.L)-len(l[i]))+1):
+                temp = self.L[j:j+len(l[i])]
+                if(l[i] == temp):
+                    type3 +=1
+
+        return type3
+        
+    def remove_one_char(self, S, i):
+        return S[:i] + S[i+1:]
+
+    def unique_removed_strings(self, S):
+        l = []
+        for i in range(len(S)):
+            l.append(self.remove_one_char(S, i))
+        return list(set(l))
+
+    def add_one_char(self, S, i, c):
+        return S[:i] + c + S[i:]
+
+    def unique_added_strings(self, S):
+        chars = 'AGCT'
+        l = []
+        for c in chars:
+            for i in range(len(S)+1):
+                l.append(self.add_one_char(S,i,c))
+
+        return list(set(l))
 
 
 if __name__ == '__main__':
@@ -34,10 +66,7 @@ if __name__ == '__main__':
     while(sl!='0'):
         S, L = sl.split()
         search = GeneticSearch(S,L)
-        print(search.CountType1())
+        print(search.CountType1(), search.CountType2(), search.CountType3())
         sl = input()
         if(sl=='0'):
             break
-    
-
-        
