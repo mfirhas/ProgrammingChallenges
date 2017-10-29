@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 
+/**
+ * src: https://open.kattis.com/problems/fbiuniversal
+ * Author: Muhammad Fathir Irhas
+ * Date: 2017-10-29
+ */
+
 namespace FBI_UCN
 {
     class Program
@@ -101,10 +107,10 @@ namespace FBI_UCN
                 n = b * n + d
             return n
          */
-        static int ConvertToBase27to10(string correctedDigits){
+        static double ConvertToBase27to10(string correctedDigits){
             string first8digits = correctedDigits.Remove(correctedDigits.Length - 1);
 
-            int result = 0;
+            double result = 0;
             foreach(char digit in first8digits)
                 result = (result * charset.Length) + charset.IndexOf(digit);
 
@@ -125,7 +131,7 @@ namespace FBI_UCN
             if(checkDigit) {
                 Console.WriteLine(index + " " + ConvertToBase27to10(correctedDigits));
             }else {
-                Console.WriteLine("Invalid");
+                Console.WriteLine(index + " Invalid");
             }
         }
 
