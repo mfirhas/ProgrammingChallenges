@@ -51,3 +51,30 @@ fn index_and_sort(arr: Vec<i32>) -> Vec<Vec<i32>> {
         .collect();
     sorted_2d_array
 }
+
+// brute force loop inside loop
+pub fn two_sum_brute_force(nums: Vec<i32>, target: i32) -> Vec<i32> {
+    for (i, v) in nums.iter().enumerate() {
+        for j in i + 1..nums.len() {
+            let sum = nums[i] + nums[j];
+            if sum == target {
+                return vec![i as i32, j as i32];
+            }
+        }
+    }
+
+    Vec::new()
+}
+
+// complement
+pub fn two_sum_complement(nums: Vec<i32>, target: i32) -> Vec<i32> {
+    let mut complement: std::collections::HashMap<i32, usize> = std::collections::HashMap::new();
+
+    for (i, &num) in nums.iter().enumerate() {
+        if let Some(&j) = complement.get(&num) {
+            return vec![i as i32, j as i32];
+        }
+        complement.insert(target - num, i);
+    }
+    Vec::new()
+}
