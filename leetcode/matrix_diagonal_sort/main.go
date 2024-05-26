@@ -5,6 +5,51 @@ import (
 	"sort"
 )
 
+func diagonalSort2(mat [][]int) [][]int {
+	rows := len(mat)
+	cols := len(mat[0])
+	arr := make([][]int, rows)
+	for i := range arr {
+		arr[i] = make([]int, cols)
+	}
+
+	for i := 0; i < cols; i++ {
+		list := []int{}
+		ind, ind1 := 0, i
+		for ind < rows && ind1 < cols {
+			list = append(list, mat[ind][ind1])
+			ind++
+			ind1++
+		}
+		sort.Ints(list)
+		ind, ind1 = 0, i
+		for ind < rows && ind1 < cols {
+			arr[ind][ind1] = list[ind]
+			ind++
+			ind1++
+		}
+	}
+
+	for i := 0; i < rows; i++ {
+		list := []int{}
+		ind1, ind := i, 0
+		for ind1 < rows && ind < cols {
+			list = append(list, mat[ind1][ind])
+			ind1++
+			ind++
+		}
+		sort.Ints(list)
+		ind1, ind = i, 0
+		for ind1 < rows && ind < cols {
+			arr[ind1][ind] = list[ind]
+			ind1++
+			ind++
+		}
+	}
+
+	return arr
+}
+
 /*
 A matrix diagonal is a diagonal line of cells starting from some cell in either the topmost row or leftmost column and going in the bottom-right direction until reaching the matrix's end. For example, the matrix diagonal starting from mat[2][0], where mat is a 6 x 3 matrix, includes cells mat[2][0], mat[3][1], and mat[4][2].
 
