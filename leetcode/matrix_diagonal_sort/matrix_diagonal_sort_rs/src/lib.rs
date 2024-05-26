@@ -44,6 +44,7 @@ fn diagonal_sort_impl(mat: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     arr
 }
 
+#[cfg(test)]
 mod diagonal_sort_test {
     use super::*;
     #[test]
